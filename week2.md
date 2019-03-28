@@ -169,4 +169,28 @@ NSURLRequest *req1 = [NSURLRequest requestWithURL:url cachePolicy:NSURLRequestRe
 
 - ios沙盒: 每个app都有一个存储空间，ios系统为每个app创建自己的目录，只能访问自己的目录。
 - NSUserDefault:用来储存用户设置，系统配置等数据。
-- plist属性列表是一种XML格式的文件。如果对象是NSString、NSDictionary、NSArray、NSData、NSNumber等类型，就可以使用writeToFile:atomically:方法直接将对象写到属性列表文件中。－
+- plist属性列表是一种XML格式的文件。如果对象是NSString、NSDictionary、NSArray、NSData、NSNumber等类型，就可以使用writeToFile:atomically:方法直接将对象写到属性列表文件中。
+
+- 文件存储
+```objective-c
+NSString *docPath=NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,NSUserDomainMask,YES)[0];      
+//拼接路径   
+NSString *filePath = [docPath stringByAppendingPathComponent:@"xxxx.plist"];
+ 
+//创建字典
+NSDictionary *dict =@{@"name":@"laoma",@"age":@"18"};
+ 
+// 存储字典
+[dict writeToFile:filePath atomically:YES];
+```
+- 文件读取
+```objective-c
+//获取doc路径   
+NSString *docPath =NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,NSUserDomainMask,YES)[0];      
+
+//拼接plist路径   
+NSString *filePath = [docPath stringByAppendingPathComponent:@"xxxx.plist"];      
+NSDictionary *dict = [NSDictionary dictionaryWithContentsOfFile:filePath];   
+
+NSLog(@"%@",dict[@"name"]);
+```
