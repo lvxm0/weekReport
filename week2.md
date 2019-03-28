@@ -60,7 +60,7 @@ UITextField = *textField = [[UITextField alloc] initWithFrame:CGRectMake(20,100,
 3. setNeedsDisplayInRect会触发局部区域重绘。
 4. 注意：drawRect是系统回调，主动调用是无效的。
 
-**graphic state**
+**Graphic State**
 
 - 使用 **CGContextSaveGstate,CGContextRestoreGstate** 保存读取状态，中间的状态不会影响已经保存的状态。
 - 使用 **UIGraphicsPushContext,UIGraphicsPopContext** 把当前状态压栈，中间对其修改，再弹出，是修改后的状态。
