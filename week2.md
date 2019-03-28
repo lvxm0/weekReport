@@ -14,7 +14,7 @@
 * UITextfield 单行输入框
 * UITextview 多行输入框
 
-```
+```objective-c
 // label
 UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(20,100,300,100)];
 [label sizeToFit];
@@ -59,7 +59,7 @@ UITextField = *textField = [[UITextField alloc] initWithFrame:CGRectMake(20,100,
 ### 实现 drawRect
 推荐使用高度封装好的UIBezierPath进行绘制
 * 绘制图形 
-```
+```objective-c
 //三角形
 UIBezierPath *path = [[UIBezierPath alloc] init];
 [path stroke];
@@ -68,7 +68,7 @@ UIBezierPath *path = [[UIBezierPath bezierPathWithRoundRect:CGRectMake(50,100,30
 [path stroke];
 ```
 * 绘制文字
-```
+```objective-c
 //NSString
 NSString *text = ...;
 [text drawAtPoint:(CGPoint)p withAttributes:(NSDictionary*)attri];
@@ -82,7 +82,7 @@ NSAttibutedString *attibutedString = ...;
 [attibutedString drawAsPatternInRect::(CGRect)r options:(NSDictionary*)attri context:(NSStringDrawingContext*)c];
 ```
 * 绘制图片
-```
+```objective-c
 UIImage *image = ...
 [image drawAtPoint:(CGPoint)p];
 [image drawInRect:(CGRect)r];
@@ -107,7 +107,7 @@ ViewController是iOS应用程序中重要的部分，是应用程序数据和视
 - 容器型ViewController
 
 ## ViewController创建 ##
-```
+```objective-c
 UIViewController *controller = [[UIViewController alloc] init];
 ```
 
