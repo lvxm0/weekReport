@@ -132,6 +132,34 @@ UIViewController *controller = [[UIViewController alloc] init];
 - post请求: 构建可变的。request对象，把请求方法改为post,设置请求数据，其余不变。
 - download请求: 创建NSUPLSessionDownloadTask，其余不变。
 
+URL 
+1、全称：Uniform Resource Locator 统一资源定位符 
+2、URL对象建立：
+
+    //创建URL从网络服务器
+    NSURL *url = [NSURL URLWithString:@"http://www.baidu.com"];
+    //创建URL从本地文件
+    NSURL *url = [NSURL fileURLWithPath:@"/Users/apple/desktop/text.txt"];
+
+3、URLRequest 对象建立：
+
+    //默认的Request
+    NSURLRequest *req = [NSURLRequest requestWithURL:url];
+    //设定缓存策略，及网络请求超时时间
+    NSURLRequest *req1 = [NSURLRequest requestWithURL:url cachePolicy:NSURLRequestReloadIgnoringLocalCacheData timeoutInterval:60];
+
+4、URLConnection的异步请求
+
+    [NSURLConnection sendAsynchronousRequest:req queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
+        if (connectionError) {
+            NSLog(@"error:%@",connectionError);
+        }else{
+            NSLog(@"response:%@",response);
+            NSLog(@"datalength:%lu",data.length);
+        }
+    }];
+
+
 ## 本地存储
 
 - ios沙盒: 每个app都有一个存储空间，ios系统为每个app创建自己的目录，只能访问自己的目录。
