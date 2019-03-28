@@ -46,6 +46,43 @@ UITextField = *textField = [[UITextField alloc] initWithFrame:CGRectMake(20,100,
 * 设置透明度/边框/背景颜色
 * 实现 **drawRect**
 
+### 视图绘制周期 
+1. 调用视图的setNeedsDisplay会将视图标记为重新绘制，在下一个次绘制周期中会进行重新绘制。
+2. 视图会回调drawRect方法，在drawRect上实现绘制代码即可。
+3. setNeedsDisplayInRect会触发局部区域重绘。
+4. 注意：drawRect是系统回调，主动调用是无效的。
 
+### 实现 drawRect
+推荐使用高度封装好的UIBezierPath进行绘制
+* 绘制图形 
+```
+//三角形
+UIBezierPath *path = [[UIBezierPath alloc] init];
+[path stroke];
+//圆形
+UIBezierPath *path = [[UIBezierPath bezierPathWithRoundRect:CGRectMake(50,100,300,300) cornerRadius:150] init];
+[path stroke];
+```
+* 绘制文字
+```
+//NSString
+NSString *text = ...;
+[text drawAtPoint:(CGPoint)p withAttributes:(NSDictionary*)attri];
+[text drawInRect:(CGRect)r withAttributes:(NSDictionary*)attri];
+[text drawAsPatternInRect::(CGRect)r options:(NSDictionary*)attri context:(NSStringDrawingContext*)c];
+
+//NSAttibutedString
+NSAttibutedString *attibutedString = ...;
+[attibutedString drawAtPoint:(CGPoint)p];
+[attibutedString drawInRect:(CGRect)r];
+[attibutedString drawAsPatternInRect::(CGRect)r options:(NSDictionary*)attri context:(NSStringDrawingContext*)c];
+```
+* 绘制图片
+```
+UIImage *image = ...
+[image drawAtPoint:(CGPoint)p];
+[image drawInRect:(CGRect)r];
+[image drawAsPatternInRect::(CGRect)r];
+```
 
 # 网络与存储
