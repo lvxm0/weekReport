@@ -85,4 +85,13 @@ UIImage *image = ...
 [image drawAsPatternInRect::(CGRect)r];
 ```
 
+## UITableView
+
+UITableView是一个列表控件，广泛运用于APP的各个界面，本质是垂直方向滚动的ScrollView。 UITableView有两种风格：UITableStylePlain,UITableStyleGrouped。
+
+### **UITableView 结构**
+- TableHeader
+- section （分组）：Header,Row,Footer
+- TableFooter
+
 # 网络与存储
