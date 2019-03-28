@@ -124,3 +124,15 @@ UIViewController *controller = [[UIViewController alloc] init];
 
 
 # 网络与存储
+网络编程与本地存储
+
+## 网络编程
+
+- get请求:  构建request对象，创建session，创建NSUPLSessionDataTask,执行Task,Response处理。
+- post请求: 构建可变的。request对象，把请求方法改为post,设置请求数据，其余不变。
+- download请求: 创建NSUPLSessionDownloadTask，其余不变。
+
+## 本地存储
+
+- ios沙盒: 每个app都有一个存储空间，ios系统为每个app创建自己的目录，只能访问自己的目录。
+- NSUserDefault:用来储存用户设置，系统配置等数据。
