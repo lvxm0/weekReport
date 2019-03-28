@@ -52,6 +52,10 @@ UITextField = *textField = [[UITextField alloc] initWithFrame:CGRectMake(20,100,
 3. setNeedsDisplayInRect会触发局部区域重绘。
 4. 注意：drawRect是系统回调，主动调用是无效的。
 
+### graphic state
+- 使用 **CGContextSaveGstate,CGContextRestoreGstate** 保存读取状态，中间的状态不会影响已经保存的状态。
+- 使用 **UIGraphicsPushContext,UIGraphicsPopContext** 把当前状态压栈，中间对其修改，再弹出，是修改后的状态。
+
 ### 实现 drawRect
 推荐使用高度封装好的UIBezierPath进行绘制
 * 绘制图形 
@@ -89,9 +93,23 @@ UIImage *image = ...
 
 UITableView是一个列表控件，广泛运用于APP的各个界面，本质是垂直方向滚动的ScrollView。 UITableView有两种风格：UITableStylePlain,UITableStyleGrouped。
 
-### **UITableView 结构**
+### UITableView 结构
 - TableHeader
 - section （分组）：Header,Row,Footer
 - TableFooter
+
+## UIViewController
+
+ViewController是iOS应用程序中重要的部分，是应用程序数据和视图之间的重要桥梁，ViewController管理应用中的众多视图。
+
+## ViewController分类 ##
+- 展示型ViewController
+- 容器型ViewController
+
+## ViewController创建 ##
+```
+UIViewController *controller = [[UIViewController alloc] init];
+```
+
 
 # 网络与存储
