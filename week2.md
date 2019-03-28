@@ -155,7 +155,8 @@ NSURLRequest *req1 = [NSURLRequest requestWithURL:url cachePolicy:NSURLRequestRe
 3. URLConnection的异步请求
 
 ```objective-c
-[NSURLConnection sendAsynchronousRequest:req queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
+[NSURLConnection sendAsynchronousRequest:req queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData
+*data, NSError *connectionError) {
         if (connectionError) {
             NSLog(@"error:%@",connectionError);
         }else{
@@ -169,7 +170,8 @@ NSURLRequest *req1 = [NSURLRequest requestWithURL:url cachePolicy:NSURLRequestRe
 
 - ios沙盒: 每个app都有一个存储空间，ios系统为每个app创建自己的目录，只能访问自己的目录。
 - NSUserDefault:用来储存用户设置，系统配置等数据。
-- plist属性列表是一种XML格式的文件。如果对象是NSString、NSDictionary、NSArray、NSData、NSNumber等类型，就可以使用writeToFile:atomically:方法直接将对象写到属性列表文件中。
+- plist属性列表是一种XML格式的文件。如果对象是NSString、NSDictionary、NSArray、NSData、NSNumber等类型，就可以使用writeToFile:atomically:方法直
+接将对象写到属性列表文件中。
 
 - 文件存储
 ```objective-c
