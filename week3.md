@@ -52,3 +52,17 @@
 - 文件浏览展示当前目录内容
 - 文件夹可以展开
 - present显示文件属性
+
+1. tableView的创建
+```
+//导航栏项的title
+    self.navigationItem.title = self.directory;
+//创建tableView
+    self.tableView = ({
+        UITableView *tableView = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStylePlain];
+        tableView.delegate = self;
+        tableView.dataSource = self;
+        tableView;
+    });
+    [self.view addSubview:self.tableView];
+```
