@@ -44,9 +44,10 @@
 ```
 ## FileExplore 文件浏览器
 功能：
-- 首页tabBarController，第一个页面文件浏览，第二个页面‘关于’内容随意
+首页tabBarController，第一个页面文件浏览，第二个页面‘关于’内容随意
 文件浏览展示当前目录内容，文件夹可以展开，present显示文件属性
 
+### 实现逻辑，重要代码
 
 - tableview窗口来显示文件列表，dir保存根目录，两个可变数组记录目录和文件。
   tableView的创建
