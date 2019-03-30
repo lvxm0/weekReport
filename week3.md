@@ -53,7 +53,11 @@
 - 文件夹可以展开
 - present显示文件属性
 
-1. tableView的创建
+
+### 实现逻辑
+
+- tableview窗口来显示文件列表，dir保存根目录，两个可变数组记录目录和文件。
+  tableView的创建
 ```
 //导航栏项的title
     self.navigationItem.title = self.directory;
@@ -65,4 +69,33 @@
         tableView;
     });
     [self.view addSubview:self.tableView];
+```
+
+- 第一页文件浏览页实现协议<UITableViewDelegate, UITableViewDataSource>中的部分方法,前者实现页面的导航，后者产生每一行的tableViewCell。
+导航逻辑：如果选中的path是目录，再产生一个文件目录的类（当前的类），根目录是这个path,push这个页面到导航控制器。如果path不是目录，产生一个文件信息类，并导航。
+```
+    if (isDirectory) {
+        NSString *path = [self.directory stringByAppendingPathComponent:self.directoryList[indexPath.row]];
+        FileExploreViewController *controller = [[FileExploreViewController alloc] initWithDirectory:path];
+        controller.hidesBottomBarWhenPushed = YES;
+        [self.navigationController pushViewController:controller animated:YES];
+    } else {
+        NSString *path = [self.directory stringByAppendingPathComponent:self.fileList[indexPath.row]];
+        FileInfoViewController *controller = [[FileInfoViewController alloc] initWithFilePath:path];
+        UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:controller];
+        [self presentViewController:navController animated:YES completion:nil];
+    }
+```
+
+- 设置cell的例子
+```
+NSString *cellID = ...;
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellID];
+    if (nil == cell) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellID];
+    }
+    cell.imageView.image = [UIImage imageNamed:@"..."];
+    cell.textLabel.text = self.directoryList[indexPath.row];
+    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    
 ```
