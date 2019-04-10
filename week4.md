@@ -27,6 +27,7 @@ NSString *home = NSHomeDirectory();
  
  
  - Documents
+ 
   保存应用运行时生成的需要持久化的数据，iTunes同步设备时会备份该目录。例如 *游戏应用可将游戏存档保存在该目录*。
   利用沙盒根目录拼接"Documents"字符串:
 ```Objective-C
@@ -44,17 +45,20 @@ NSString *documents = [array objectAtIndex:0];
 ```
   
  - Temp
+ 
     保存应用运行时所需的临时数据，使用完毕后再将相应的文件从该目录删除。应用没有运行时，系统也可能会清除该目录下的文件。iTunes同步设备时不会备份该目录。
 ```Objective-C
     NSString *tmp= NSTemporaryDirectory();
 ```
 
 - Library/Caches
+
   保存应用运行时生成的需要持久化的数据，iTunes同步设备时不会备份该目录。一般存储体积大，不需要备份的非重要数据。
   可以利用沙盒跟目录拼接"Catches"字符串.
   也利用NSSearchPathForDirectoriesInDomains函数(将函数的第一个参数改为:NSCachesDirectory即可)
    
  - Library/Preference
+ 
   保存应用的所有偏好设置，iOS 的 setting (设置)应用会在该目录中查找应用的设置信息。iTunes同步设备时会备份该目录。
   通过NSUserDefaults类存取该目录下的设置信息。
 
