@@ -139,6 +139,27 @@ NSArray *array = [NSArray arrayWithObjects:@"a",@"b",nil];
 NSArray *array = [NSKeyedUnarchiver unarchiveObjectWithFile:path];
 ```
 
+- 对多对象归档接档
+    - 归档
+    ```Objective-C
+    [archvier encodeCGPoint:point forKey:@"kPoint"];  
+    [archvier encodeObject:info forKey:@"kInfo"];  
+    [archvier encodeInteger:value forKey:@"kValue"];  
+    [archvier finishEncoding];  
+    [data writeToFile:multiHomePath atomically:YES];  
+
+    ```
+    - 接档
+    ```Objective-C
+    NSMutableData *dataR = [[NSMutableData alloc]initWithContentsOfFile:multiHomePath];  
+    NSKeyedUnarchiver *unarchiver = [[NSKeyedUnarchiver alloc]initForReadingWithData:dateR];  
+    CGPoint pointR = [unarchiver decodeCGPointForKey:@"kPoint"];  
+    NSString *infoR = [unarchiver decodeObjectForKey:@"kInfo"];  
+    NSInteger valueR = [unarchiver decodeIntegerForKey:@"kValue"];  
+    [unarchiver finishDecoding];  
+    NSLog(@"%f,%f,%@,%d",pointR.x,pointR.y,infoR,valueR);  
+    ```
+
 注意 *如果父类也可以直接归档*：
 
 应该在uencodeWithCoder:方法中加上一句 [super encodeWithCode:encode];确保继承的实例变量也能被编码，即也能被归档。
@@ -183,6 +204,30 @@ NSArray *array = [NSKeyedUnarchiver unarchiveObjectWithFile:path];
 Core Data框架提供了对象-关系映射(ORM)的功能，即能够将OC对象转化成数据，保存在SQLite3数据库文件中，也能将保存在数据库中的数据还原成OC对象。
 在次数据操作期间,不需要编写任何SQL语句，使用此功能,要添加 CoreData.framework 和导入主头文件 <CoreDate/CoreData.h> 。
 
+
+- NSManagedObject
+    
+    - 通过Core Data从数据库中取出的对象，默认情况下都是NSManagedObject对象
+    - NSManagedObject的工作模式有点类似于NSDictionary对象,通过键-值对来存取所有的实体属性
+    - setValue:forkey:存储设置属性值(属性名为key)
+    - valueForKey:获取属性值(属性名为key)
+
+
+- CoreData主要对象
+
+    - NSManagedObjectContext:负责数据和应用库之间的交互(CRUD);
+     
+    - NSPersistentStoreCoordinator:添加持久化存储库(比如SQLite数据库);
+
+    - NSManagedObjectModel:代表Core Data的模型文件;
+
+    - NSEntityDescription：用来描述实体;
+    
+- Core Data 延迟加载
+ 
+     Core Data不会根据实体中的关联关系立即获取相应的关联对象。
+
+     如通过Core Data取出Person实体时，并不会立即查询相关联的Card实体，当应用真的需要使用Card时，才会查询数据库,加载Card实体信息。
 
 
 
