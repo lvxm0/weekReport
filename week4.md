@@ -233,4 +233,6 @@ Core Data框架提供了对象-关系映射(ORM)的功能，即能够将OC对象
 
 ## 心得体会
 
-最后，清明节玩的很开心:)
+加深了对IOS数据存储的理解，对上课中比较模糊的知识点有了新的认识。所以又查了很多相关的博客和资料。
+找到了不错的视频教程：https://study.163.com/course/courseMain.htm?courseId=1002858003&_trace_c_p_k2_=579a672e26c543b4ad5359ce402aba5d#/courseDetail?tab=1
+清明节玩的很开心:)
