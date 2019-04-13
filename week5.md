@@ -15,7 +15,7 @@
 ### 客户端架构
 
 
-## IM聊天
+## IM聊天APP
 
 ### 主要功能
 消息收发，消息保存,联系人管理，聊天管理。
@@ -23,6 +23,18 @@
 网络通信，消息收发，本地存储（维护一个列表），联系人管理，会话管理（seq=5 seq=7），高性能。
 
 ### 架构
+
+## 录歌APP
+
+### 主要功能
+
+下载音乐伴奏，录制歌曲，录制视频，编辑视频，合成MV，上传视频，互动点赞。
+
+* 使用AVAudioSession Category(APIS)
+* 使用AVAudioPlayer APIS
+* 使用AVAudioRecorder APIS
+* 使用AVCaptureSession Core Classes
+
 
 
 
