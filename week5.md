@@ -4,10 +4,15 @@
 ## Feeds信息流资讯App
 
 ### 主要功能
-多Tab列表展示，Feeds流展示，
+多Tab列表展示，Feeds流展示，图片浮层，详情页展示，写操作。
 
-### 功能拆解
+* 多Tab展示：使用UIScrollView，Container View Controller, ChildViewController。实现功能：分页逻辑和下拉刷新。
+* feed流展示：tableViewCell重用（纯文本，单图，多图）
+* 图片浮层：使用 UIViewController Transitioning 实现图片动效，以及需要完成多图预加载。
+* 详情页：实现评论分页，TableViewCell复用。
+* 写操作（点赞评论）：要求信息同步，运用观察者模式。
 
 ### 客户端架构
+
 
 ### 其他相关技术介绍 
