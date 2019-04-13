@@ -34,6 +34,9 @@
 * 使用AVAudioPlayer APIS
 * 使用AVAudioRecorder APIS
 * 使用AVCaptureSession Core Classes
+* 使用AVFoundation Core Classes
+* 使用NSURLSession APIS
+* 使用NSMutabeURLRequest APIs
 
 
 
