@@ -41,6 +41,8 @@
 * 使用NSMutabeURLRequest APIs
 
 ### 架构设计
+![](https://github.com/lvxm0/weekReport/blob/master/1.PNG)
+
 
 https://github.com/lvxm0/weekReport/blob/master/1.PNG
 https://github.com/lvxm0/weekReport/blob/master/2.PNG
