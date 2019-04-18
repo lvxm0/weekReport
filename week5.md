@@ -1,7 +1,12 @@
 # week5 周记
 
-本周讲解了3种实训项目方向以及其框架：Feeds流, IM聊天, MV录歌。
-小组选定信息流方向，所以着重讲解Feed流，对其他方向使用的知识点简单记录和查找资料。
+第五周介绍三种项目方向的功能及架构：
+
+- Feeds流
+- IM聊天
+- MV录歌
+
+小组选定信息流方向，着重整理Feed流相关内容，对其他方向简单查询资料。
 
 ## Feeds信息流资讯App
 
@@ -72,15 +77,18 @@
   
 * 点赞机制
   - [点赞动画实现](https://juejin.im/post/5c3eb6d1518825253b5ea544)
+    - 实现逻辑: 实际就是用CABasicAnimation的keypath是path和CABasicAnimation的keypath是transform.scale的动画组合在一起作用于一个三角形上,并且一共创建6个三角形图形.
   - [信息同步](https://juejin.im/post/5b1a3a795188257d9417ac26)
-  - 设计模式：观察者模式，实现对象间一对多的依赖关系，可能用到：
   
-    - NSNotification：方便 NSNotificationCenter 广播到其他对象的封装对象
-    - NSNotificationCenter：管理通知调度表中对象的发送和接收通知
     - NSPostWhenIdle：空闲发送通知 (当运行循环处于等待或空闲状态时，发送通知，对于不重要的通知可以使用)
     - NSPostASAP：尽快发送通知 (当前运行循环迭代完成时，通知将会被发送，有点类似没有延迟的定时器)
     - NSPostNow ：同步发送通知 (如果不使用合并通知和postNotification:一样是同步通知)
 
+  - 设计模式：观察者模式，实现对象间一对多的依赖关系，可能用到：
+  
+    - NSNotification：方便 NSNotificationCenter 广播到其他对象的封装对象
+    - NSNotificationCenter：管理通知调度表中对象的发送和接收通知
+    
 ## IM聊天APP
 
 ### 主要功能
@@ -124,7 +132,7 @@
   ```
   #import <AVFoundation/AVFoundation.h>
   ```
-  核心类: 使用方式参考[链接](http://www.cnblogs.com/taoxu/p/8022957.html)
+- 核心类: 使用方式参考[链接](http://www.cnblogs.com/taoxu/p/8022957.html)
   
   * AVCaptureDevice代表了输入设备,例如摄像头与麦克风。
   * AVCaptureInput代表了输入数据源
@@ -138,8 +146,13 @@
 ## 心得体会
 
 非常感谢小T老师对职业发展规划的分享，尤其是对待现有工作的态度上，“现在的绩效是做给未来的老板看的”。
-也很残酷的给出了现阶段，技术人员的年龄和应该匹配的职位，以及淘汰的年龄上限，感受到了一定的压力。
-想要一直呆在圈子里，就要保持对新鲜事物的敏感度。以后要多关注技术交流会，大牛的讲座等等。一定要重视基础！
+
+很残酷的给出了现阶段，技术人员的年龄和应该匹配的职位，以及淘汰的年龄上限，感受到了一定的压力。
+
+想要一直呆在圈子里，就要保持对新鲜事物的敏感度，需要对这个行业保持热情和求知欲。
+
+以后要多关注技术交流会，大牛的讲座等等。一定要重视基础！
+
 
 
 
