@@ -70,7 +70,16 @@
   
   - 使用方法：在你要设置的VC的初始化方法里调用sc_makeSuspendedView方法，并在viewDidLoad之前，设置浮层配置信息sc_suspendedViewConfiguration属性。
   
+* 点赞机制
+  - [点赞动画实现](https://juejin.im/post/5c3eb6d1518825253b5ea544)
+  - [信息同步](https://juejin.im/post/5b1a3a795188257d9417ac26)
+  - 设计模式：观察者模式，实现对象间一对多的依赖关系，可能用到：
   
+    - NSNotification：方便 NSNotificationCenter 广播到其他对象的封装对象
+    - NSNotificationCenter：管理通知调度表中对象的发送和接收通知
+    - NSPostWhenIdle：空闲发送通知 (当运行循环处于等待或空闲状态时，发送通知，对于不重要的通知可以使用)
+    - NSPostASAP：尽快发送通知 (当前运行循环迭代完成时，通知将会被发送，有点类似没有延迟的定时器)
+    - NSPostNow ：同步发送通知 (如果不使用合并通知和postNotification:一样是同步通知)
 
 ## IM聊天APP
 
