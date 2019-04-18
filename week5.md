@@ -13,6 +13,51 @@
 * 详情页：实现评论分页，TableViewCell复用。
 * 写操作（点赞评论）：要求信息同步，运用观察者模式。
 
+### 相关知识
+
+* [使用UIScrollView 实现下拉刷新](https://blog.csdn.net/jeffasd/article/details/51201698)
+
+  通过在 UIScrollView 的 contentOffset 和 contentInset 来实现的，mjrefresh在处理开始刷新事件时使用的是动画来解决。
+  ```
+  
+    // 根据状态做事情
+    if (state == MJRefreshStateIdle) {
+        if (oldState != MJRefreshStateRefreshing) return;
+        
+        // 保存刷新时间
+        [[NSUserDefaults standardUserDefaults] setObject:[NSDate date] forKey:self.lastUpdatedTimeKey];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+        
+        // 恢复inset和offset
+        [UIView animateWithDuration:MJRefreshSlowAnimationDuration animations:^{
+            self.scrollView.mj_insetT += self.insetTDelta;
+            
+            // 自动调整透明度
+            if (self.isAutomaticallyChangeAlpha) self.alpha = 0.0;
+        } completion:^(BOOL finished) {
+            self.pullingPercent = 0.0;
+        }];
+    }
+  ```
+* [feed流式分页实现](https://aotu.io/notes/2017/06/27/infinite-scrolling/index.html)
+
+  - 流式分页有如下几个特点：
+
+    - 通过滚动/上拉/点击等方式加载新一页
+    - 无页码
+    - 无上/下页按钮
+    - 不可跳转至指定页面
+    - pc端和移动端均有使用
+  
+  - 前端实现逻辑：在前端分页的实现中，通过接口一次性获取列表的所有内容，根据数据的总长度和每页需展示的个数计算总页数；
+之后的每次加载操作（滚动/点击）中，依次执行数据截取、DOM 渲染、插入结构的过程，直至最后一页。
+
+  - 流程图
+  
+  ![](https://misc.aotu.io/Yettyzyt/2017-06-27-infinite-scrolling/fontend_pagination.png)
+  
+  - 后端为前端提供接口 
+  ```diviner.jd.com/diviner?p=610009&callback=jsonpCallbackMoreGood&lid=1&lim=100&ec=utf-8```
 
 ## IM聊天APP
 
