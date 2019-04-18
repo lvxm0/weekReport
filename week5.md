@@ -41,12 +41,23 @@
 * 使用NSMutabeURLRequest APIs
 
 ### 架构设计
-
+![https://github.com/lvxm0/weekReport/blob/master/1.PNG]()
+https://github.com/lvxm0/weekReport/blob/master/1.PNG
+https://github.com/lvxm0/weekReport/blob/master/2.PNG
+https://github.com/lvxm0/weekReport/blob/master/3.PNG
+https://github.com/lvxm0/weekReport/blob/master/4.PNG
+https://github.com/lvxm0/weekReport/blob/master/5.PNG
+https://github.com/lvxm0/weekReport/blob/master/6.PNG
+https://github.com/lvxm0/weekReport/blob/master/7.PNG
+https://github.com/lvxm0/weekReport/blob/master/8.PNG
+https://github.com/lvxm0/weekReport/blob/master/9.PNG
+https://github.com/lvxm0/weekReport/blob/master/10.PNG
 ## 心得体会
 
 非常感谢小T老师对职业发展规划的分享，尤其是对待现有工作的态度上，“现在的绩效是做给未来的老板看的”。
 也很残酷的给出了现阶段，技术人员的年龄和应该匹配的职位，以及淘汰的年龄上限，感受到了一定的压力。
-想要一直呆在圈子里，就要保持对新鲜事物的敏感度。
+想要一直呆在圈子里，就要保持对新鲜事物的敏感度。以后要多关注技术交流会，大牛的讲座等等。一定要重视基础！
+
 
 
 
