@@ -13,8 +13,6 @@
 * 详情页：实现评论分页，TableViewCell复用。
 * 写操作（点赞评论）：要求信息同步，运用观察者模式。
 
-### 架构设计
-
 
 ## IM聊天APP
 
@@ -25,6 +23,11 @@
 网络通信，消息收发，本地存储（维护一个列表），联系人管理，会话管理（seq=5 seq=7），高性能。
 
 ### 架构设计
+![](https://github.com/lvxm0/weekReport/blob/master/1.PNG)
+![](https://github.com/lvxm0/weekReport/blob/master/2.PNG)
+![](https://github.com/lvxm0/weekReport/blob/master/3.PNG)
+
+
 
 ## 录歌APP
 
@@ -41,19 +44,30 @@
 * 使用NSMutabeURLRequest APIs
 
 ### 架构设计
-![](https://github.com/lvxm0/weekReport/blob/master/1.PNG)
+
+![](https://github.com/lvxm0/weekReport/blob/master/8.PNG)
+![](https://github.com/lvxm0/weekReport/blob/master/9.PNG)
+![](https://github.com/lvxm0/weekReport/blob/master/10.PNG)
+
+### 相关知识
+附学习链接
+- [AVFoundation 框架解析](https://www.jianshu.com/p/4db87a1c170e)
+  VFoundation框架是ios中很重要的框架，所有与视频音频相关的软硬件控制都在这个框架里面，接下来这几篇就主要对这个框架进行介绍和讲解。
+  想要使用框架，引入头文件
+  ```
+  #import <AVFoundation/AVFoundation.h>
+  ```
+  核心类: 使用方式参考[链接](http://www.cnblogs.com/taoxu/p/8022957.html)
+  
+  * AVCaptureDevice代表了输入设备,例如摄像头与麦克风。
+  * AVCaptureInput代表了输入数据源
+  * AVCaptureOutput代表了输出数据源
+  * AVCaptureSession用于协调输入与输出之间的数据流
+  
+- [实现录制视频并保存功能的实例](https://www.jianshu.com/p/81d17b92fb1b)
 
 
-https://github.com/lvxm0/weekReport/blob/master/1.PNG
-https://github.com/lvxm0/weekReport/blob/master/2.PNG
-https://github.com/lvxm0/weekReport/blob/master/3.PNG
-https://github.com/lvxm0/weekReport/blob/master/4.PNG
-https://github.com/lvxm0/weekReport/blob/master/5.PNG
-https://github.com/lvxm0/weekReport/blob/master/6.PNG
-https://github.com/lvxm0/weekReport/blob/master/7.PNG
-https://github.com/lvxm0/weekReport/blob/master/8.PNG
-https://github.com/lvxm0/weekReport/blob/master/9.PNG
-https://github.com/lvxm0/weekReport/blob/master/10.PNG
+
 ## 心得体会
 
 非常感谢小T老师对职业发展规划的分享，尤其是对待现有工作的态度上，“现在的绩效是做给未来的老板看的”。
