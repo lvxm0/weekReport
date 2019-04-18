@@ -1,5 +1,7 @@
 # week5 周记
-本周讲解了3种实训项目方向：Feeds流, IM,MV录歌 。小组选定信息流方向，所以着重讲解Feed流。
+
+本周讲解了3种实训项目方向以及其框架：Feeds流, IM聊天, MV录歌。
+小组选定信息流方向，所以着重讲解Feed流，对其他方向使用的知识点简单记录和查找资料。
 
 ## Feeds信息流资讯App
 
@@ -50,14 +52,25 @@
     - pc端和移动端均有使用
   
   - 前端实现逻辑：在前端分页的实现中，通过接口一次性获取列表的所有内容，根据数据的总长度和每页需展示的个数计算总页数；
-之后的每次加载操作（滚动/点击）中，依次执行数据截取、DOM 渲染、插入结构的过程，直至最后一页。
-
-  - 流程图
+之后的每次加载操作（滚动/点击）中，依次执行数据截取、DOM 渲染、插入结构的过程，直至最后一页。流程图如下：
   
   ![](https://misc.aotu.io/Yettyzyt/2017-06-27-infinite-scrolling/fontend_pagination.png)
   
   - 后端为前端提供接口 
   ```diviner.jd.com/diviner?p=610009&callback=jsonpCallbackMoreGood&lid=1&lim=100&ec=utf-8```
+  
+  - 后端实现逻辑:后端分页的实现中，在加载时，前端通过页码来拉数据，若返回非空数组，则进行 DOM 渲染，插入接口的操作；若返回空数组，则说明当前请求的为最后一页的数据，无需再发送请求。流程图如下：
+  
+  ![](https://misc.aotu.io/Yettyzyt/2017-06-27-infinite-scrolling/backend_pagination.png)
+  
+* [图片浮层](https://www.jianshu.com/p/b83aefdc9519)
+  - 可供参考的实现浮层的博客： https://juejin.im/post/5a54d08d518825734859d46d
+  
+  - 实现逻辑: 使用控件SCSuspendedView （可由Pod导入），实现遮挡或不遮挡层级下的ViewController。
+  
+  - 使用方法：在你要设置的VC的初始化方法里调用sc_makeSuspendedView方法，并在viewDidLoad之前，设置浮层配置信息sc_suspendedViewConfiguration属性。
+  
+  
 
 ## IM聊天APP
 
