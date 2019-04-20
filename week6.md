@@ -35,3 +35,12 @@ Rpc 远程过程调用
 
 业务系统设计：
 
+gem sources --remove https://rubygems.org/
+
+gem sources --a https://gem.ruby-china.com/
+
+gem sources -l
+
+sudo gem install cocoapods
+
+pod setup
