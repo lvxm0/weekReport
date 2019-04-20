@@ -35,6 +35,11 @@ Rpc 远程过程调用
 
 业务系统设计：
 
+
+https://www.jianshu.com/p/f43b5964f582
+
+
+
 gem sources --remove https://rubygems.org/
 
 gem sources --a https://gem.ruby-china.com/
