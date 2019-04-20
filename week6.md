@@ -41,7 +41,7 @@ http://code.cocoachina.com/view/135384
 
 https://www.jianshu.com/p/f43b5964f582
 
-
+https://juejin.im/entry/5c067eb56fb9a04a0a5ef583
 
 gem sources --remove https://rubygems.org/
 
