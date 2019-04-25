@@ -118,6 +118,13 @@
   - 需要基于生成的服务器代码来单独编写服务
   - 修改更新不方便
 
+## 服务端开发入门
+
+- 学习链接
+  - [服务端开发](https://www.w3cschool.cn/windwant/)
+  - [Swift构建App服务器端](http://www.cocoachina.com/ios/20180108/21767.html)
+  - [快速搭建模拟服务器](http://www.cocoachina.com/ios/20151105/14074.html)
+
 
 ## 心得体会
 对服务端有了概念上的理解，但是如何搭建服务器，如何选择语言，还是一个需要自己去探索的问题
