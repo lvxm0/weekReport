@@ -62,6 +62,9 @@
 - 作用：数据的存储，查找，转发，支持模糊查询
 - [常用的存储](https://www.jianshu.com/p/23e00d5c705a)
   - SQL类关系型存储
+    - 典型： MYSQL/ORACLE
+    - 核心知识点：索引; 事务与事务隔离级别;存储方法;触发器;不同关系型数据库的SQL差异
+    
   - NoSQL类Key-Value型存储
     - 典型：redis/memcache
     - 适用场景
