@@ -173,12 +173,12 @@ https://www.jianshu.com/p/f43b5964f582
 
 https://juejin.im/entry/5c067eb56fb9a04a0a5ef583
 
-gem sources --remove https://rubygems.org/
+sudo gem sources --remove https://rubygems.org/
 
-gem sources --a https://gem.ruby-china.com/
+sudo gem sources --a https://gems.ruby-china.com/
 
 gem sources -l
 
 sudo gem install cocoapods
 
-pod setup
+sudo pod setup
