@@ -1,3 +1,9 @@
+# week 7
+16340164 吕雪萌
+
+确定了小组分工，确定做前端UI。
+
+
 [storyboard 编程](https://juejin.im/post/5a3cbbbc51882527a00f8e7e)
 
 [xib简述](https://www.jianshu.com/p/ea3f90cc744b)
