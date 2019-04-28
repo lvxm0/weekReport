@@ -24,8 +24,9 @@
   - ToolBar切换一个场景，适用每个场景下的Button不一样的情况。TabBar适合应用的每个场景的Button都一样的情况。
  
 ## UIColor
+
   - [概念](https://www.jianshu.com/p/12cecb7e7912)：UIColor类是UIKit中用来存储颜色数据的一个类,可以用来自定义颜色。
-  - [使用方法](https://www.cnblogs.com/xunziji/archive/2012/09/27/2706136.html):
+  - [使用方法](https://www.cnblogs.com/xunziji/archive/2012/09/27/2706136.html)
   ```Objective-c
   UIColor *testColor1= [UIColor colorWithRed:240/255.0 green:240/255.0 blue:240/255.0 alpha:1];
   labelColor.backgroundColor =  testColor1;
