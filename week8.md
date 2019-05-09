@@ -2,7 +2,7 @@
 16340164 吕雪萌
 
 ## 实验心得
-本周学习使用Assets.xcassets管理图片，了解使用方法。学习WMPageController框架，对做Feed流有了一定的了解。
+本周学习使用Assets.xcassets管理图片，了解使用方法。学习WMPageController框架，对做Feed流APP实现有一定的帮助。
 
 ## Assets.xcassets简介
 
