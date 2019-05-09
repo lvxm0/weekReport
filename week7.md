@@ -1,6 +1,7 @@
 # week 7
 16340164 吕雪萌
 
+## 心得体会
 确定了小组分工，确定做前端UI。这周学习制作Feed流APP的UI资料:
 
 - [toolbar、tabbar的区别和联系](https://www.zhihu.com/question/28789746)
@@ -48,13 +49,44 @@
   - 缺点
     - 只能实现边缘拖动，如果从视图除左边边缘以外的部分没有效果
     - 如果push到其他界面，如果重写的leftBarButtonItem就失效了
-  - 
   
   
 ## 拖动手势
+  在app里弹出窗口，将view向上或向下划出。实现代码：
+  ```
+  - (void)viewDidLoad {
+    [super viewDidLoad];
+    _imageView = [[UIImageView alloc] initWithFrame:CGRectMake(100, 200, 80, 80)];
+    _imageView.backgroundColor = [UIColor redColor];
+    [self.view addSubview:_imageView];
+    _imageView.userInteractionEnabled = YES;
+    
+    UIPanGestureRecognizer *panGes = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(move:)];
+    [_imageView addGestureRecognizer:panGes];
+    panGes.delegate = self;
+}
+- (void)move:(UIPanGestureRecognizer *)sender {
+    CGPoint pt = [sender translationInView:_imageView];
+    sender.view.center = CGPointMake(sender.view.center.x +pt.x , sender.view.center.y);
+    //每次移动完，将移动量置为0，否则下次移动会加上这次移动量
+    [sender setTranslation:CGPointMake(0, 0) inView:self.view];
+    if (sender.state == UIGestureRecognizerStateEnded) {
+         NSLog(@"pan.view == %f", sender.view.center.x);
+    }
+   
+}
 
+- (BOOL)gestureRecognizerShouldBegin:(UIPanGestureRecognizer *)gestureRecognizer {
+    CGPoint translation = [gestureRecognizer translationInView:gestureRecognizer.view];
+    NSLog(@"translation == %f", translation.x);
+//    if (translation.x >= 0) {
+//        return NO;
+//    }
+    return YES;
+}
 
-## 心得体会
+  ```
+  
 
 ## 资源链接
 
