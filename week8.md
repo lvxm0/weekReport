@@ -41,7 +41,12 @@
   
 ## WMPageController简介
 
+- WMPageController控件是iOS开发中第三方库，WMPageController类似于Android平台上的ViewPager控件，主要是用来分页显示内容，可以通过手势滑动来切换页面，也可以通过点击标题部分来切换页面
+
+- [官方介绍](https://github.com/wangmchn/WMPageController/blob/master/README_zh-CN.md)
+
 ## WMPageController使用方法
+
 
 
 ## 资源链接
