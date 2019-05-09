@@ -45,7 +45,6 @@
 
 - [官方介绍](https://github.com/wangmchn/WMPageController/blob/master/README_zh-CN.md)
 
-- ![效果预览](https://github.com/wangmchn/WMPageController/raw/master/WMPageControllerDemo/Overview.gif)
 
 ## WMPageController使用方法
 
@@ -59,8 +58,84 @@
 
   end
   ```
-- 
+- 在ViewController.m文件中加入以下代码,在ViewController中加入了一个UILabel标签
+  ```
+  #import "ViewController.h"
 
+  @interface ViewController ()
+
+  @end
+
+  @implementation ViewController
+
+  - (void)viewDidLoad {
+      [super viewDidLoad];
+      // Do any additional setup after loading the view, typically from a nib.
+      UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(50, 50, 100, 50)];
+      label.text = @"Page 1";
+      [self.view addSubview:label];
+  }
+
+  - (void)didReceiveMemoryWarning {
+      [super didReceiveMemoryWarning];
+      // Dispose of any resources that can be recreated.
+  }
+
+  @end
+  ```
+- 创建一个ViewController2继承自UIViewController，并且在ViewController2.m文件中加入以下代码：
+  ```
+  #import "ViewController2.h"
+
+  @interface ViewController2 ()
+
+  @end
+
+  @implementation ViewController2
+
+  - (void)viewDidLoad {
+      [super viewDidLoad];
+      // Do any additional setup after loading the view.
+      UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(50, 50, 100, 50)];
+      label.text = @"Page 2";
+      [self.view addSubview:label];
+  }
+
+  - (void)didReceiveMemoryWarning {
+      [super didReceiveMemoryWarning];
+      // Dispose of any resources that can be recreated.
+  }
+
+  @end
+  ```
+- 打开AppDelegate.m文件，在其中加入下面一个方法：
+  ```
+  - (WMPageController *) getPages {
+    //WMPageController中包含的页面数组
+    NSArray *controllers = [NSArray arrayWithObjects:[ViewController class], [ViewController2 class], nil];
+    //WMPageController控件的标题数组
+    NSArray *titles = [NSArray arrayWithObjects:@"体育新闻", @"娱乐新闻", nil];
+    //用上面两个数组初始化WMPageController对象
+    WMPageController *pageController = [[WMPageController alloc] initWithViewControllerClasses:controllers andTheirTitles:titles];
+    //设置WMPageController每个标题的宽度
+    pageController.menuItemWidth = 100;
+    //设置WMPageController标题栏的高度
+    pageController.menuHeight = 35;
+    //设置WMPageController选中的标题的颜色
+    pageController.titleColorSelected = [UIColor colorWithRed:200 green:0 blue:0 alpha:1];
+    return pageController;
+  ```
+- 在AppDelegate.m的didFinishLaunchingWithOptions方法中，加入如下代码：
+  ```
+  - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    // Override point for customization after application launch.
+    WMPageController *pageController = [self getPages];
+    UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:pageController];
+    self.window.rootViewController = navController;
+    return YES;
+  }
+
+  ```
 
 ## 资源链接
 
