@@ -30,7 +30,7 @@
     - New Folder: 新文件夹，用于文件嵌套
   
   - 创建 New Image Set 文件夹，可以通过添加图片导入，也可以通过将图片直接拖到占位符方式导入
-  - ![拉伸图片](https://www.cnblogs.com/W-Kr/p/5381750.html)：
+  - [拉伸图片](https://www.cnblogs.com/W-Kr/p/5381750.html)：
     - 选中图片，选择 Show Slicing开始切割
     - 在右侧属性栏中更改slicing属性：水平拉伸/垂直拉伸/水平垂直拉伸
     - 拉伸形式：
