@@ -58,7 +58,7 @@
 
   end
   ```
-- 在ViewController.m文件中加入以下代码,在ViewController中加入了一个UILabel标签
+- 在ViewController.m文件中加入以下代码,在ViewController中加入了一个UILabel标签，实现第一个分页
   ```
   #import "ViewController.h"
 
@@ -83,7 +83,7 @@
 
   @end
   ```
-- 创建一个ViewController2继承自UIViewController，并且在ViewController2.m文件中加入以下代码：
+- 创建一个ViewController2继承自UIViewController，并且在ViewController2.m文件中加入以下代码，实现第二个分页
   ```
   #import "ViewController2.h"
 
@@ -108,7 +108,7 @@
 
   @end
   ```
-- 打开AppDelegate.m文件，在其中加入下面一个方法：
+- 打开AppDelegate.m文件，在其中加入下面一个方法，创建了一个WMPageController对象
   ```
   - (WMPageController *) getPages {
     //WMPageController中包含的页面数组
@@ -125,7 +125,7 @@
     pageController.titleColorSelected = [UIColor colorWithRed:200 green:0 blue:0 alpha:1];
     return pageController;
   ```
-- 在AppDelegate.m的didFinishLaunchingWithOptions方法中，加入如下代码：
+- 在AppDelegate.m的didFinishLaunchingWithOptions方法中，加入如下代码，将窗口的根视图控制器设置为这个导航栏
   ```
   - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
@@ -143,8 +143,8 @@
 - [Assets.xcassets 资料总结](https://blog.csdn.net/u012371575/article/details/78584996)
 - [Assets.xcassets 使用说明](https://www.jianshu.com/p/c35ce599f7da)
 - [Assets.xcassets 详细使用](https://www.cnblogs.com/W-Kr/p/5381750.html)
-- [WMPageController 使用1](https://juejin.im/post/5a3889bb518825127e745af5)
-- [WMPageController 使用2](https://www.jianshu.com/p/e2503fb3241b)
-- [WMPageController 使用3 重点！](https://blog.csdn.net/yubo_725/article/details/51159633)
+- [WMPageController 使用](https://juejin.im/post/5a3889bb518825127e745af5)
+- [WMPageController 使用](https://www.jianshu.com/p/e2503fb3241b)
+- [WMPageController 详细使用](https://blog.csdn.net/yubo_725/article/details/51159633)
 - [WMPageController 注意事项](https://www.jianshu.com/p/c803761b232f)
 - [pod使用](https://www.jianshu.com/p/5a74c0842cf2)
