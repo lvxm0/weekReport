@@ -45,8 +45,21 @@
 
 - [官方介绍](https://github.com/wangmchn/WMPageController/blob/master/README_zh-CN.md)
 
+- ![效果预览](https://github.com/wangmchn/WMPageController/raw/master/WMPageControllerDemo/Overview.gif)
+
 ## WMPageController使用方法
 
+- 新建工程，通过cocoapods将WMPageController引入到项目中，Podfile文件的内容如下：
+  ```
+  platform :ios,'7.0'
+
+  target 'DemoTest1' do
+
+   pod 'WMPageController', '~> 1.6.4'
+
+  end
+  ```
+- 
 
 
 ## 资源链接
