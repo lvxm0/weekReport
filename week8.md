@@ -21,7 +21,24 @@
   ```UIImage *image=[UIImage imageNamed:@"plus.png"];```
   
 ## Assets.xcassets使用方法
-
+  - 选择 File - new - File - Resource - Asset Catalog，输入名字和选择Target创建
+  - 操作区域：左侧为SetList，中间为Set Viewer，右侧区域为Set attributes inspector
+  - SetList区域可以新建删除：
+    - New Image Set：管理图片夹
+    - New App Icon: 管理图标
+    - New Lauch Image: 创建启动图
+    - New Folder: 新文件夹，用于文件嵌套
+  
+  - 创建 New Image Set 文件夹，可以通过添加图片导入，也可以通过将图片直接拖到占位符方式导入
+  - ![拉伸图片](https://www.cnblogs.com/W-Kr/p/5381750.html)：
+    - 选中图片，选择 Show Slicing开始切割
+    - 在右侧属性栏中更改slicing属性：水平拉伸/垂直拉伸/水平垂直拉伸
+    - 拉伸形式：
+      - 左边到左句柄,右句柄到右边部分为不变部分;
+      - 左句柄到内句柄为填充样式,将来就会用这部分去填充其他扩充部分;
+      - 内句柄到片句柄部分为可扩充部分,随着拉伸或者缩小,这部分将会被填充样式填充;
+      ![](http://img.blog.csdn.net/20131115003352531?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvdTAxMTI0NzQ2OA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center)
+  
 ## WMPageController简介
 
 ## WMPageController使用方法
