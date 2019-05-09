@@ -17,7 +17,7 @@
   
 - 注意事项
   - 在Assets中的图片不能通过imageWithContentsOfFile:加载；
-  - imageName:加载的图片要么是Assets中的图片，要么是资源包中的图片，如果要用imageName:加载其他的图片，必须在文件名后面添加扩展名。
+  - imageName:加载的图片要么是Assets中的图片，要么是资源包中的图片，如果要用imageName:加载其他的图片，必须在文件名后面添加扩展名。如：
   ```UIImage *image=[UIImage imageNamed:@"plus.png"];```
   
 ## Assets.xcassets使用方法
