@@ -13,7 +13,7 @@
   - 管理应用的 Icon 和 Default 图片,方便使用,抛开以前规范命名如 Icon.png，Icon@2x.png，Xcode自动识别尺寸进行匹配
   - 方便管理模块图片，可以针对模块建立Component1.xcassets, 在这个Category中去建立新的Image set
   - 可视化管理图片拉伸，抛弃到处使用resizeImage来获取拉伸图片
-  - 方便app图标和启动页图片设置
+  - [方便app图标和启动页图片设置](https://www.jianshu.com/p/a5cf847970d1)
   
 - 注意事项
   - 在Assets中的图片不能通过imageWithContentsOfFile:加载；
@@ -53,4 +53,5 @@
 - [WMPageController 使用1](https://juejin.im/post/5a3889bb518825127e745af5)
 - [WMPageController 使用2](https://www.jianshu.com/p/e2503fb3241b)
 - [WMPageController 使用3 重点！](https://blog.csdn.net/yubo_725/article/details/51159633)
+- [WMPageController 注意事项](https://www.jianshu.com/p/c803761b232f)
 - [pod使用](https://www.jianshu.com/p/5a74c0842cf2)
