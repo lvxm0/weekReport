@@ -2,3 +2,6 @@
 https://gitee.com/hejintao/FeedListDemo
 
 https://www.jianshu.com/p/5ba9b12ec933
+
+
+http://www.cnblogs.com/chivas/archive/2012/05/16/2504006.html
